@@ -19,11 +19,14 @@ PIP_PACKAGES=(
 )
 
 NODES=(
+    "https://github.com/ltdrdata/ComfyUI-Manager"
+    "https://github.com/cubiq/ComfyUI_essentials"
     
 )
 
 CHECKPOINT_MODELS=(
-    "https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/flux1-dev.safetensors"
+    # commented out in first attempt because already downloaded below
+    # "https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/flux1-dev.safetensors"
 )
 
 CLIP_MODELS=(
