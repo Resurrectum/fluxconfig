@@ -21,4 +21,18 @@ PROVISIONING_SCRIPT = https://raw.githubusercontent.com/Resurrectum/fluxconfig/m
 
 ## Persistent storage
 The AI Docker container downloads models into `/workspace`. In order not to loose the downloaded data on container startup, mount the external drive to this folder on runpod. Prior to downloading, the AI Docker container image is probably checking if that images already exists. 
-The path can be set as an environment variable. 
+The path can be set as an **environment variable**. 
+
+## Pod start command
+In the template on runpod, the default docker command is 
+`bash -c '/start.sh'
+as stated here:
+https://docs.runpod.io/pods/templates/overview
+
+There is no need to change the default startup command. 
+
+The first time starting will take a long time. First the container image is pulled from `ghcr`. Then the provisionning script is executed which downloads all models (safetensor files) from Huggingface. 
+
+## 1111 AI Dock portal
+The user can connect to the user portal. The username is `user`. The password is stored in the environment variable `WEB_PASSWORD` inside the docker container. So one can connect via ssh to the docker, readout that variable `echo $WEB_PASSWORD` and connect. 
+In the next page there are all services and their port. ComfyUI can be selected. At this stage, although the AI Dock is already working, it will still take time to download and run `ComfyUI`. The progress can be observed by clicking on Cloudflare Quick Tunnel. 
