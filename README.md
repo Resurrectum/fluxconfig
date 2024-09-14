@@ -36,3 +36,15 @@ The first time starting will take a long time. First the container image is pull
 ## 1111 AI Dock portal
 The user can connect to the user portal. The username is `user`. The password is stored in the environment variable `WEB_PASSWORD` inside the docker container. So one can connect via ssh to the docker, readout that variable `echo $WEB_PASSWORD` and connect. 
 In the next page there are all services and their port. ComfyUI can be selected. At this stage, although the AI Dock is already working, it will still take time to download and run `ComfyUI`. The progress can be observed by clicking on Cloudflare Quick Tunnel. 
+
+## Issues with the flux1-dev.safetensors
+When selected as a model in ComfyUI I get the error message that the model **type** was not recognised. 
+I assume this file is corrupted or so. 
+So I download it again using `curl`
+```
+curl -L -H "Authorization: Bearer $HF_TOKEN" https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors -o flux1-dev.safetensors
+```
+the `-L` tells curl to follow redirect URLs. 
+`H` is for Huggingface to pass the HF_Token which is pulled from the `ENV` variables. It is followed by the link and the name of the file. 
+that command is to be executed in the correct folder:
+`/workspace/storage/stable_diffusion/models/ckpt`

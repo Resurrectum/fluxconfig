@@ -25,7 +25,8 @@ NODES=(
 )
 
 CHECKPOINT_MODELS=(
-    # this is also downloaded below as UNET, Currently I do not understand the difference
+    # this is also downloaded below as UNET, Currently I do not understand the difference. I add this here 
+    # so it gets detected by ComfyUI
     "https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/flux1-dev.safetensors"
     "ttps://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.safetensors"
 )
