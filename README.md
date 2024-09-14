@@ -48,3 +48,12 @@ the `-L` tells curl to follow redirect URLs.
 `H` is for Huggingface to pass the HF_Token which is pulled from the `ENV` variables. It is followed by the link and the name of the file. 
 that command is to be executed in the correct folder:
 `/workspace/storage/stable_diffusion/models/ckpt`
+
+## VAE Model
+Was wrong, the sha256sum did not match. This model seems to be mandatory if one uses the flux1-dev 
+it is also on Huggingface, in the same repo as flux1-dev
+Using curl to update, from the folder:
+/workspace/storage/stable_diffusion/models/vae
+'''
+curl -L -H "Authorization: Bearer $HF_TOKEN" https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors -o ae.safetensors
+'''
