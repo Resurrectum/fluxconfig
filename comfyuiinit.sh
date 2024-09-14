@@ -27,6 +27,7 @@ NODES=(
 CHECKPOINT_MODELS=(
     # commented out in first attempt because already downloaded below
     # "https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/flux1-dev.safetensors"
+    "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.safetensors"
 )
 
 CLIP_MODELS=(
