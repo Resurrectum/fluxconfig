@@ -27,6 +27,8 @@ NODES=(
 CHECKPOINT_MODELS=(
     # this is also downloaded below as UNET, Currently I do not understand the difference. I add this here 
     # so it gets detected by ComfyUI  -> if twice, 60GB are not enough, I assume it is downloaded twice
+    # choose only the schnell
+    "https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors"
     #"https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors"
     #"https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.safetensors"
 )
@@ -40,7 +42,9 @@ UNET_MODELS=(
 )
 
 VAE_MODELS=(
+    # seems this is necessary in combo with the flux1-dev.safetensors
     "https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/ae.safetensors"
+    "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors"
 )
 
 LORA_MODELS=(
