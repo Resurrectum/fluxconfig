@@ -26,9 +26,9 @@ NODES=(
 
 CHECKPOINT_MODELS=(
     # this is also downloaded below as UNET, Currently I do not understand the difference. I add this here 
-    # so it gets detected by ComfyUI
-    "https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors"
-    "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.safetensors"
+    # so it gets detected by ComfyUI  -> if twice, 60GB are not enough, I assume it is downloaded twice
+    #"https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors"
+    #"https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.safetensors"
 )
 
 CLIP_MODELS=(
